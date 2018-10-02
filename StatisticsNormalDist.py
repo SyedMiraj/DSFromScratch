@@ -42,7 +42,7 @@ def normal_distribution(x, mu=0, sigma=1):
     value = norm_first_part(sigma)*math.exp(norm_last_part(x, mu, sigma))
     return value
 
-dataset = [random.randint(10, 30) for _ in range(100)]
+dataset = sorted([random.randint(10, 30) for _ in range(100)])
 
 normal_mean = mean(dataset)
 normal_variance = variance(dataset)
@@ -50,6 +50,8 @@ normal_variance = variance(dataset)
 x_i = [normal_distribution(x, normal_mean, normal_variance) for x in dataset]
 
 plt.plot(dataset, x_i, linestyle='-')
+plt.xlim(5, 35)
+
     
     
     
